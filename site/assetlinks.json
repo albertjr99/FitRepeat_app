@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gratia.fitrepeat",
+      "sha256_cert_fingerprints": [
+        "COLE:AA:BB:...:SHA-256-DO-CERTIFICADO-DE-ASSINATURA-DO-PLAY-CONSOLE"
+      ]
+    }
+  }
+]
