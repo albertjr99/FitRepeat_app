@@ -1,5 +1,5 @@
 const CACHE = "treino-ppl-v3";
-const ASSETS = ["./", "./index.html", "./treino.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./privacy-policy.html"];
+const ASSETS = ["./", "./index.html", "./treino.html", "./manifest.json", "./native-bridge.js", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./privacy-policy.html"];
 
 self.addEventListener("install", (e) => {
   self.skipWaiting();

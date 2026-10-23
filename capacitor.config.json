@@ -1,0 +1,19 @@
+{
+  "appId": "com.gratia.fitrepeat",
+  "appName": "Fit Repeat",
+  "webDir": "site",
+  "backgroundColor": "#000000",
+  "android": {
+    "allowMixedContent": false
+  },
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#000000"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon",
+      "iconColor": "#000000"
+    }
+  }
+}
