@@ -1,0 +1,44 @@
+name: Android AAB (Play Store)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_code:
+        description: "versionCode (inteiro, deve aumentar a cada envio à Play)"
+        required: true
+        default: "1"
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - run: npm ci
+      - run: npx cap sync android
+      - name: Restaurar chave de upload
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+        run: echo "$KEYSTORE_B64" | base64 -d > android/upload.keystore
+      - name: Gerar AAB assinado
+        working-directory: android
+        env:
+          FITREPEAT_KEYSTORE_PATH: upload.keystore
+          FITREPEAT_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          FITREPEAT_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          FITREPEAT_KEY_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          FITREPEAT_VERSION_CODE: ${{ inputs.version_code }}
+        run: ./gradlew bundleRelease
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fit-repeat-release-aab
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error

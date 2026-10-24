@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fit Repeat</string>
+    <string name="title_activity_main">Fit Repeat</string>
+    <string name="package_name">com.gratia.fitrepeat</string>
+    <string name="custom_url_scheme">com.gratia.fitrepeat</string>
+</resources>
