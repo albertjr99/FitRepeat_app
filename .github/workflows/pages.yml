@@ -1,0 +1,40 @@
+name: Política de privacidade (GitHub Pages)
+
+# Publica apenas privacy-policy.html e terms.html (não o código do app).
+on:
+  push:
+    branches: [main]
+    paths:
+      - site/privacy-policy.html
+      - site/terms.html
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Montar pasta pública
+        run: |
+          mkdir _pages
+          cp site/privacy-policy.html site/terms.html _pages/
+          printf '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=privacy-policy.html"><title>Fit Repeat</title><a href="privacy-policy.html">Política de privacidade</a>\n' > _pages/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _pages
+      - id: deployment
+        uses: actions/deploy-pages@v4
