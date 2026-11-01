@@ -68,3 +68,11 @@ Pendências conhecidas para validar em aparelho/simulador:
 
 ## Antes de publicar — testar num aparelho
 Instale o `.aab`/APK de teste e confira: abrir offline, cadastro/login, salvar treino, **backup por e-mail** (folha de compartilhar), exportar calendário, permissão e disparo de lembrete, links de vídeo, tela cheia/barra de status.
+
+## Redefinição de senha por e-mail (v1.1.0) — estado atual no app nativo
+O app novo recupera a senha por link de e-mail (o código de recuperação foi removido). Isso exige o servidor descrito em `REDEFINICAO_DE_SENHA_POR_EMAIL.md` (Netlify + Resend). **Enquanto ele não estiver ativo**, o app nativo mostra "Não foi possível enviar o e-mail" e oferece "Apagar tudo e recomeçar" (com restauração de backup).
+
+Para ativar de verdade no app Android/iOS faltam 3 coisas além do passo a passo do documento:
+1. **Endereço do servidor:** preencher `window.FITREPEAT_API_BASE` no topo de `site/native-bridge.js` (ex.: `https://fitrepeat.netlify.app`). Sem isso o app nativo nem tenta enviar.
+2. **Abrir o link dentro do app:** o link do e-mail abre no navegador, onde não estão os dados do app. É preciso configurar Android App Links (intent-filter com o domínio do servidor + `assetlinks.json` com o SHA-256 da assinatura da Play) e tratar o `appUrlOpen` no app. Isso depende do domínio definitivo.
+3. **Data safety e política:** com o envio ativo, o e-mail do usuário passa a ir ao servidor/Resend (só quando ele pede). Declarar na Play: *Informações pessoais → Endereço de e-mail*, coletado, finalidade "Gerenciamento de conta", opcional, criptografado em trânsito. A política publicada já foi atualizada.

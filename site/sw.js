@@ -1,4 +1,4 @@
-const CACHE = "treino-ppl-v3";
+const CACHE = "treino-ppl-v5";
 const ASSETS = ["./", "./index.html", "./treino.html", "./manifest.json", "./native-bridge.js", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./privacy-policy.html"];
 
 self.addEventListener("install", (e) => {
@@ -17,7 +17,7 @@ self.addEventListener("activate", (e) => {
 
 // rede primeiro (sempre pega a versão mais nova do app), cache como fallback offline
 self.addEventListener("fetch", (e) => {
-  if (e.request.method !== "GET" || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin)) return;
+  if (e.request.method !== "GET" || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin) || !e.request.url.startsWith(self.location.origin)) return;
   e.respondWith(
     fetch(e.request)
       .then((res) => {
