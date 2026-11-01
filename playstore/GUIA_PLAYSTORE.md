@@ -21,6 +21,8 @@ O Fit Repeat é um PWA. Na Play Store ele entra como **TWA (Trusted Web Activity
 | `site/icon-512.png` | Ícone da loja (512×512) |
 | `playstore/listing_ptbr.md`, `listing_en.md`, `listing_es.md` | Textos da ficha da loja (3 idiomas); capturas e gráfico também em `en/` e `es/` |
 
+> **Novo (v2026-10.3):** a recuperação de senha agora envia um link por e-mail. Siga `REDEFINICAO_DE_SENHA_POR_EMAIL.md` (função em `site/netlify/functions/reset.js`). Como o e-mail do usuário passa a ser enviado a um serviço de e-mail **quando ele pede a redefinição**, ajuste o formulário **Segurança dos dados** da Play Console (e-mail: coletado, usado só para gerenciamento da conta, não armazenado) e revise a política.
+
 ## 2. Passo a passo
 
 ### Passo 1 — Preencha seus dados legais (5 min)

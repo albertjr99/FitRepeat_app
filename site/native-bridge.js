@@ -2,6 +2,10 @@
    Só age dentro do app Android/iOS; no navegador/PWA não faz nada.
    Adapta ao WebView o que ele não oferece: compartilhar arquivos, baixar arquivos,
    notificações e abrir links externos. O restante do app não precisa mudar. */
+/* Endereço do servidor da redefinição de senha (Netlify). Vazio = função ainda não ativada:
+   o app avisa que não foi possível enviar o e-mail. Ex.: 'https://fitrepeat.netlify.app' */
+window.FITREPEAT_API_BASE = window.FITREPEAT_API_BASE || '';
+
 (function () {
   var C = window.Capacitor;
   if (!C || !C.isNativePlatform || !C.isNativePlatform()) return;

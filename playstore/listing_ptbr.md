@@ -9,7 +9,8 @@ Treino simples, com você no controle: monte e edite suas fichas do seu jeito, t
 
 TREINO DO DIA, SEM COMPLICAÇÃO
 • Divisão PPL 6x/semana (Push, Pull, Legs, A-B-C-A2-B2-C2) já pronta, com cronograma editável.
-• Registre carga, repetições e RPE de cada série e acompanhe o que você concluiu.
+• Registre carga e repetições de cada série (RPE opcional, com explicação) e acompanhe o que você concluiu.
+• Troque o treino de hoje quando precisar — a troca fica registrada. Cronômetro que acompanha a tela, fixo ou móvel.
 • Edite, troque, remova ou adicione exercícios; guia de execução e link para vídeo.
 
 MONTE O SEU TREINO
@@ -26,12 +27,14 @@ EVOLUÇÃO
 • Lembretes de treino e de pesagem em jejum.
 
 PRIVACIDADE E SEGURANÇA
-• Conta com senha forte e bloqueio automático do app.
+• Conta com senha e bloqueio automático do app; se esquecer a senha, você recebe um link no e-mail cadastrado.
 • Seus dados ficam só no seu aparelho. Sem anúncios, sem rastreadores.
 • Backup por e-mail com resumo do histórico e arquivo opcionalmente protegido por senha.
 
 IMPRESSÃO
 • Imprima sua ficha de musculação ou de aeróbico em uma única página A4.
+
+AJUDA GUIADA: um tour mostra o que cada área faz e como configurar. Troque de celular levando seus dados em um arquivo.
 
 TEMA CLARO E ESCURO, texto ajustável.
 
