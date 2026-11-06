@@ -76,3 +76,8 @@ Para ativar de verdade no app Android/iOS faltam 3 coisas além do passo a passo
 1. **Endereço do servidor:** preencher `window.FITREPEAT_API_BASE` no topo de `site/native-bridge.js` (ex.: `https://fitrepeat.netlify.app`). Sem isso o app nativo nem tenta enviar.
 2. **Abrir o link dentro do app:** o link do e-mail abre no navegador, onde não estão os dados do app. É preciso configurar Android App Links (intent-filter com o domínio do servidor + `assetlinks.json` com o SHA-256 da assinatura da Play) e tratar o `appUrlOpen` no app. Isso depende do domínio definitivo.
 3. **Data safety e política:** com o envio ativo, o e-mail do usuário passa a ir ao servidor/Resend (só quando ele pede). Declarar na Play: *Informações pessoais → Endereço de e-mail*, coletado, finalidade "Gerenciamento de conta", opcional, criptografado em trânsito. A política publicada já foi atualizada.
+
+## Quando chegar uma nova versão do app (zip do desenvolvimento)
+1. Substitua `site/` pelos arquivos novos (`index.html`, `sw.js`, políticas etc.).
+2. Rode `python3 scripts/aplicar-adaptacoes-nativas.py` — reaplica a ponte nativa, o e-mail de contato e o ajuste da redefinição de senha.
+3. `npx cap sync android` e gere o `.aab` com um `versionCode` maior (workflow do GitHub ou `npm run android:build`).
